@@ -33,7 +33,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       {title && <h1>{title}</h1>}
       {subtitle && <p>{subtitle}</p>}
 
-      {/* Optional search bar */}
+      {/* Optional search bar
       {showSearchBar && (
         <div className="hero-search-bar">
           <input
@@ -42,14 +42,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             className="search-input"
           />
         </div>
-      )}
+      )} */}
 
-      {/* ✅ Optional loading bar */}
+      {/* ✅ Optional loading bar
       {showLoadingBar && (
         <div className="loading-bar">
           <div className="loading-progress"></div>
         </div>
-      )}
+      )} */}
 
       {showButton && (
         <div className="hero-btns">
