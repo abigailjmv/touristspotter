@@ -88,6 +88,8 @@ const Sidebar: React.FC = () => {
     } finally {
       setLoading(false);
       setSearchBarVisible(false); // Hide the search bar after submission
+      setTextInput("");           // Clear the text input
+      setImageFile(null);         // Clear the image file
     }
   };
 
