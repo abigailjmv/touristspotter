@@ -2,6 +2,7 @@
     padding: 20px;
     text-align: center;
     background-color:rgb(0, 0, 0);
+    min-height: 100vh;
 }
 
 .destinations-grid {
@@ -34,7 +35,7 @@ h1 {
 
 .filter {
     margin-bottom: 10px;
-    display: flex;
+    display: contents;
     justify-content: flex-end;
     padding-right: 10px;
 }
@@ -70,5 +71,49 @@ h1 {
   .view-toggle-buttons .active {
     background-color: #007bff;
     color: white;
+  }
+  
+  .destinations-page {
+    color: white;
+    padding: 20px;
+  }
+  
+  .destinations-page h1 {
+    color: white;
+  }
+  
+  .filter select,
+  .view-toggle-buttons button {
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+    padding: 8px;
+    margin: 0 5px;
+    border-radius: 5px;
+  }
+  
+  .view-toggle-buttons button.active {
+    background-color: #555;
+    font-weight: bold;
+  }
+  
+  .hotels-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .hotels-list li {
+    margin: 10px 0;
+    font-size: 18px;
+    color: white;
+  }
+  
+  .hotels-list a {
+    color: #b1d7c1;
+    text-decoration: none;
+  }
+  
+  .hotels-list a:hover {
+    text-decoration: underline;
   }
   

@@ -138,7 +138,7 @@ const DestinationsPage = () => {
                   <a href={hotel.url} target="_blank" rel="noopener noreferrer">
                     {hotel.hotel_name}
                   </a>{" "}
-                  – {hotel.city}
+                  – <span className="hotel-city">{hotel.city}</span>
                 </li>
               ))}
             </ul>
