@@ -2,9 +2,25 @@ import { useEffect, useState } from "react";
 import TouristSpotCard from "../TouristSpotCard";
 import "./Destinations.css";
 
+// Define types for the spot and hotel data
+interface Spot {
+  placeId: string;
+  name: string;
+  city: string;
+  placePhoto: string;
+  editorialSummary?: string;
+  captions?: string;
+}
+
+interface Hotel {
+  "Hotel Name": string;
+  city: string;
+  URL: string;
+}
+
 const DestinationsPage = () => {
-  const [spots, setSpots] = useState([]);
-  const [hotels, setHotels] = useState([]);
+  const [spots, setSpots] = useState<Spot[]>([]);
+  const [hotels, setHotels] = useState<Hotel[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedCity, setSelectedCity] = useState("All");
   const [view, setView] = useState("destinations"); // or "hotels"
@@ -13,7 +29,7 @@ const DestinationsPage = () => {
     const fetchSpots = async () => {
       try {
         const response = await fetch("https://abgljmv-touristspotter-api.hf.space/api/destinations-gallery");
-        const data = await response.json();
+        const data: Spot[] = await response.json(); // Type the response data
         setSpots(data);
       } catch (error) {
         console.error("Error fetching destinations:", error);
@@ -29,7 +45,7 @@ const DestinationsPage = () => {
     try {
       setLoading(true);
       const response = await fetch("https://abgljmv-touristspotter-api.hf.space/api/hotels");
-      const data = await response.json();
+      const data: Hotel[] = await response.json(); // Type the response data
       setHotels(data);
     } catch (error) {
       console.error("Error fetching hotels:", error);
@@ -38,11 +54,11 @@ const DestinationsPage = () => {
     }
   };
 
-  const handleCityChange = (e) => {
+  const handleCityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedCity(e.target.value);
   };
 
-  const handleViewChange = (newView) => {
+  const handleViewChange = (newView: string) => {
     setView(newView);
     if (newView === "hotels") {
       fetchHotels(); // Load hotels only if user switches to hotel view
@@ -104,7 +120,7 @@ const DestinationsPage = () => {
                 name={spot.name}
                 city={spot.city}
                 photo={spot.placePhoto}
-                description={spot.editorialSummary || spot.captions}
+                description={(spot.editorialSummary || spot.captions) as string}
               />
             ))
           )}
