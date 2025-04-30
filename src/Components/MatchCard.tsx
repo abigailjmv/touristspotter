@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./MatchCard.css";
 import RecommendationCard from "./RecommendationCard";
-import { Button } from "./Button";
+// import { Button } from "./Button";
 import MatchCardItem from "./MatchCardItem";
 
 function MatchCard({ recommendations }: { recommendations: any[] }) {

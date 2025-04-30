@@ -1,6 +1,21 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-const RecommendationCard = ({ src, name, city, summary, similarity, path }) => {
+interface RecommendationCardProps {
+  src: string;
+  name: string;
+  city?: string; // Optional, since it's conditionally rendered
+  summary?: string; // Optional, since it's conditionally rendered
+  similarity?: number; // Optional, since it's conditionally rendered
+  path: string; // Assuming it's always passed
+}
+
+const RecommendationCard: React.FC<RecommendationCardProps> = ({
+  src,
+  name,
+  city,
+  summary,
+  similarity,
+}) => {
   return (
     <li className="suggestion__card__item">
       <div className="suggestion__card__image">

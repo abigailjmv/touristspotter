@@ -18,7 +18,7 @@ const UserPreferences: React.FC = () => {
     const fetchVisitorPreference = async () => {
       try {
         const response = await fetch(
-          `http://127.0.0.1:5000/get-visitor-preference?visitor_id=${visitorId}`
+          `https://abgljmv-touristspotter-api.hf.space/get-visitor-preference?visitor_id=${visitorId}`
         );
         const data = await response.json();
 

@@ -1,10 +1,20 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import TouristSpotCard from "./TouristSpotCard";
 import "./RecommendedDestinations.css";
 
+// Define an interface for the recommendation spot structure
+interface Recommendation {
+  placeId: string;
+  name: string;
+  city: string;
+  placePhoto: string;
+  editorialSummary?: string; // Optional field
+  captions?: string; // Optional field
+}
+
 export default function RecommendedDestinations() {
-  const [recommendations, setRecommendations] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [recommendations, setRecommendations] = useState<Recommendation[]>([]); // Specify that the state is an array of Recommendation objects
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchRecommendations = async () => {
@@ -37,7 +47,7 @@ export default function RecommendedDestinations() {
                 name={spot.name}
                 city={spot.city}
                 photo={spot.placePhoto}
-                description={spot.editorialSummary || spot.captions}
+                description={spot.editorialSummary || spot.captions || "No description available"} // Fallback value
               />
             </div>
           ))

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { getVisitorId } from "../utils/visitor.js";
+import { useState, useEffect } from "react";
+import { getVisitorId } from "../utils/visitor";
 import "./Popup.css";
 
 // Define categories
@@ -16,8 +16,13 @@ const categories = [
   "Wildlife & Nature Reserves",
 ];
 
+// Define the types for the visitor data response
+interface VisitorData {
+  selectedCategories: string[];
+}
+
 // Fetch visitor data from the backend
-const fetchVisitorData = async (visitorId) => {
+const fetchVisitorData = async (visitorId: string): Promise<VisitorData | null> => {
   try {
     const response = await fetch(
       `https://abgljmv-touristspotter-api.hf.space/get-visitor-data/${visitorId}`
@@ -33,7 +38,10 @@ const fetchVisitorData = async (visitorId) => {
 };
 
 // Function to send data to Flask backend
-const storeDataToBackend = async (visitorId, selectedCategories) => {
+const storeDataToBackend = async (
+  visitorId: string,
+  selectedCategories: string[]
+): Promise<void> => {
   try {
     const response = await fetch("https://abgljmv-touristspotter-api.hf.space/store-visitor-data", {
       method: "POST",
@@ -58,7 +66,7 @@ const storeDataToBackend = async (visitorId, selectedCategories) => {
 };
 
 const Popup = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
   useEffect(() => {
@@ -90,21 +98,17 @@ const Popup = () => {
 
   // Handle user toggling categories
   const toggleCategory = (category: string) => {
-    setSelectedCategories(
-      (prev) =>
-        prev.includes(category)
-          ? prev.filter((item) => item !== category) // Remove category if already selected
-          : [...prev, category] // Add category if not selected
+    setSelectedCategories((prev) =>
+      prev.includes(category)
+        ? prev.filter((item) => item !== category) // Remove category if already selected
+        : [...prev, category] // Add category if not selected
     );
   };
 
   const handleClose = async () => {
     try {
       // Save to localStorage
-      localStorage.setItem(
-        "selectedCategories",
-        JSON.stringify(selectedCategories)
-      );
+      localStorage.setItem("selectedCategories", JSON.stringify(selectedCategories));
 
       // Generate/retrieve visitor ID
       const visitorId = getVisitorId();
@@ -129,9 +133,7 @@ const Popup = () => {
           {categories.map((category) => (
             <li
               key={category}
-              className={
-                selectedCategories.includes(category) ? "selected" : ""
-              }
+              className={selectedCategories.includes(category) ? "selected" : ""}
               onClick={() => toggleCategory(category)} // Handle user click
             >
               {category}

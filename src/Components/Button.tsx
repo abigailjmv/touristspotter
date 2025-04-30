@@ -1,29 +1,39 @@
-// import React from "react";
+import React from "react";
 import "./Button.css";
 import { Link } from "react-router-dom";
 
-const STYLES = ["btn--primary", "btn--outline", "btn--test"];
+// Define available button styles and sizes as constants
+const STYLES = ["btn--primary", "btn--outline", "btn--test"] as const;
+const SIZES = ["btn--medium", "btn--large"] as const;
 
-const SIZES = ["btn--medium", "btn--large"];
+// Define types for button style and size based on the above constants
+type ButtonStyle = typeof STYLES[number];
+type ButtonSize = typeof SIZES[number];
 
-export const Button = ({
+// Define ButtonProps with proper typing for props
+type ButtonProps = {
+  children: React.ReactNode;
+  type?: "button" | "submit" | "reset";
+  onClick?: () => void;
+  buttonStyle?: ButtonStyle;
+  buttonSize?: ButtonSize;
+  to: string; // 'to' prop is required for the Link
+  className?: string; // Optional className prop for custom styling
+};
+
+export const Button: React.FC<ButtonProps> = ({
   children,
-  type,
+  type = "button",
   onClick,
-  buttonStyle,
-  buttonSize,
+  buttonStyle = STYLES[0], // Default to 'btn--primary'
+  buttonSize = SIZES[0],   // Default to 'btn--medium'
   to,
+  className = "", // Optional className, default is empty string
 }) => {
-  const checkButtonStyle = STYLES.includes(buttonStyle)
-    ? buttonStyle
-    : STYLES[0];
-
-  const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
-
   return (
-    <Link to={to} className="btn-mobile">
+    <Link to={to} className={`btn-mobile ${className}`}>
       <button
-        className={`btn ${checkButtonStyle} ${checkButtonSize}`}
+        className={`btn ${buttonStyle} ${buttonSize}`}
         onClick={onClick}
         type={type}
       >

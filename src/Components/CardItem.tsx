@@ -1,7 +1,13 @@
 // import React from "react";
 import { Link } from "react-router-dom";
 
-function CardItem(props) {
+type CardItemProps = {
+  path: string;
+  src: string;
+  text: string;
+};
+
+function CardItem(props: CardItemProps) {
   return (
     <>
       <li className="cards__item">

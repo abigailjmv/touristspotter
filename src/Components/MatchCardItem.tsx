@@ -1,4 +1,4 @@
-// import React from "react";
+import React from "react";
 import "./MatchCardItem.css";
 import { Link } from "react-router-dom";
 
@@ -15,8 +15,8 @@ const MatchCardItem: React.FC<MatchCardItemProps> = ({
   matchText,
   matchImage,
 }) => {
-  const defaultUserImage = "images/default.jpg";
-  const placeholderMatchImage = "images/image2.jpg";
+  const defaultUserImage = "images/default.jpg"; // Define default user image
+  const placeholderMatchImage = "images/image2.jpg"; // Define placeholder image for match
 
   return (
     <>
@@ -36,7 +36,8 @@ const MatchCardItem: React.FC<MatchCardItemProps> = ({
           </figure>
           <div className="search__cards__item__text">
             <h3>Your preferred tourist spot</h3>
-            {/* <p>{userText}</p> */}
+            {/* Optionally display the userText */}
+            <p>{userText}</p>
           </div>
         </div>
       </li>
