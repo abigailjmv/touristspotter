@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import './SafetyAdvisory.css'; // Path to your CSS file
 
 const MindanaoTravelAdvisory = () => {

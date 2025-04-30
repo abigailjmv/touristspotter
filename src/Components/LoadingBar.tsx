@@ -1,5 +1,5 @@
 // LoadingBar.tsx
-import React from "react";
+// import React from "react";
 import "./LoadingBar.css";
 
 const LoadingBar: React.FC = () => {
