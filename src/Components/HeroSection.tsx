@@ -21,8 +21,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   showButton = true,
   buttonText = "GET STARTED",
   buttonLink = "/home",
-  showSearchBar = false,
-  showLoadingBar = false, // ✅ Default to false
+  // showSearchBar = false,
+  // showLoadingBar = false, // ✅ Default to false
   children,
 }) => {
   return (
