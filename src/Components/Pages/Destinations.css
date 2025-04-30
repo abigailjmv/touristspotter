@@ -1,0 +1,74 @@
+.destinations-page {
+    padding: 20px;
+    text-align: center;
+    background-color:rgb(0, 0, 0);
+}
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    padding: 20px;
+}
+
+h1{
+    color: aliceblue;
+}
+
+.destinations-page {
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+}
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    padding: 20px;
+}
+
+h1 {
+    color: aliceblue;
+}
+
+.filter {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+
+.filter select {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid aliceblue;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.filter select:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.view-toggle-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .view-toggle-buttons button {
+    padding: 6px 12px;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .view-toggle-buttons .active {
+    background-color: #007bff;
+    color: white;
+  }
+  

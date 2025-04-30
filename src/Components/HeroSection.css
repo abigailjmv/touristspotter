@@ -1,0 +1,45 @@
+.hero-container {
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover; /* Ensures the background image covers the container */
+  background-position: center center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Optional: makes the background image fixed during scrolling */
+}
+
+.hero-container > h1,
+.hero-container > p {
+  color: #fff;
+  position: relative;
+  z-index: 0;
+}
+
+.hero-container > h1 {
+  font-size: 100px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.hero-container > p {
+  margin-top: 8px;
+  font-size: 32px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.hero-btns {
+  margin-top: 32px;
+}
+
+.hero-btns .btn {
+  margin: 6px;
+}
+
+.main-ui {
+  display: flex;
+  gap: 2rem;
+  height: 500px;
+}

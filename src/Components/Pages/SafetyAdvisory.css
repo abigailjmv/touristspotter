@@ -1,0 +1,145 @@
+.bg-advisory {
+    margin: 100px;
+    margin-top: 50px;
+}
+/* Container for the advisory page */
+.advisory-container {
+    padding: 30px;
+    background: linear-gradient(to bottom, rgb(10, 10, 10), rgb(30, 30, 30)); /* Darker gray/black gradient */
+    color: white;
+    font-family: 'Arial', sans-serif;
+    border-radius: 10px; /* Rounded corners for a softer look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    margin-top: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto; /* Centering container */
+  }
+  
+  /* Heading styles for h1 inside advisory container */
+  .advisory-container h1 {
+    color: aliceblue;
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Adds some spacing to letters for visual appeal */
+    background: white; /* Gradient text effect */
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  /* Section Header styles for h2 inside advisory container */
+  .advisory-container h2 {
+    color: #d4ecd4; /* Light green to match aesthetic */
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-top: 40px;
+    text-transform: uppercase; /* Adds a more formal tone */
+    letter-spacing: 2px;
+    border-bottom: 2px solid #476a47; /* Green underline for a neat finish */
+    padding-bottom: 5px;
+  }
+  
+  /* Grid layout for advisory content */
+  .advisory-container .advisory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Light overlay background */
+    border-radius: 10px;
+  }
+  
+  /* List styling for section contents inside advisory container */
+  .advisory-container ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+  }
+  
+  .advisory-container ul li {
+    margin: 20px 0;
+    font-size: 1.2em;
+    color: #dcdcdc;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 30px;
+    padding-right: 20px;
+  }
+  
+  .advisory-container ul li::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #90ee90;
+    font-size: 1.5em;
+  }
+  
+  /* Paragraph styling for general text inside advisory container */
+  .advisory-container p {
+    font-size: 1.2em;
+    color: #dcdcdc;
+    line-height: 1.8;
+    margin-top: 20px;
+  }
+  
+  /* Add image styling for images before or after guidelines inside advisory container */
+  .advisory-container img {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adds shadow to images */
+    object-fit: cover;
+  }
+  
+  /* Link styling for reminders and references inside advisory container */
+  .advisory-container a {
+    color: #00bfff; /* Deep sky blue */
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+  }
+  
+  .advisory-container a:hover {
+    border-color: #00bfff;
+    text-decoration: underline;
+  }
+  
+  /* Ensure proper spacing between paragraphs inside advisory container */
+  .advisory-container p + p {
+    margin-top: 25px;
+  }
+  
+  /* Responsive Design for smaller screens */
+  @media (max-width: 768px) {
+    .advisory-container {
+      padding: 15px;
+    }
+  
+    .advisory-container h1 {
+      font-size: 2.2em;
+    }
+  
+    .advisory-container h2 {
+      font-size: 1.5em;
+    }
+  
+    .advisory-container ul li {
+      font-size: 1em;
+    }
+  
+    .advisory-container p {
+      font-size: 1em;
+    }
+  
+    .advisory-container img {
+      max-width: 100%;
+    }
+  }
+  

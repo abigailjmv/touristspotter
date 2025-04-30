@@ -1,0 +1,17 @@
+.result-page {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Hero takes up half of the viewport height */
+  .hero-half {
+    height: 50vh;
+    overflow: hidden;
+  }
+   
+  /* MatchCard continues like a normal scrollable page */
+  .matchcard-section {
+    padding: 2rem;
+    background-color: black;
+  }
+  
