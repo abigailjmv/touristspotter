@@ -17,7 +17,7 @@ interface HeroSectionProps {
 const HeroSection: React.FC<HeroSectionProps> = ({
   title,
   subtitle,
-  backgroundImage,
+  // backgroundImage,
   showButton = true,
   buttonText = "GET STARTED",
   buttonLink = "/home",
@@ -28,7 +28,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <div
       className="hero-container"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      style={{ backgroundImage: `/images/HeroSection1.png` }}
     >
       {title && <h1>{title}</h1>}
       {subtitle && <p>{subtitle}</p>}
