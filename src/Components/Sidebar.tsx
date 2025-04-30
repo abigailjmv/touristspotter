@@ -17,7 +17,7 @@ import {
   CompassOutlined,
 } from "@ant-design/icons";
 import { RcFile } from "antd/es/upload";
-import { getVisitorId } from "../utils/visitor";
+// import { getVisitorId } from "../utils/visitor";
 import "./Sidebar.css";
 
 const Sidebar: React.FC = () => {
@@ -29,7 +29,7 @@ const Sidebar: React.FC = () => {
   const searchBarRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
-  const visitorId = getVisitorId(); // still being used if needed
+  // const visitorId = getVisitorId(); // still being used if needed
 
   const toggleCollapse = () => {
     setCollapsed(!collapsed);
@@ -60,7 +60,7 @@ const Sidebar: React.FC = () => {
 
     setLoading(true);
     try {
-      const response = await fetch(`http://127.0.0.1:5000/api/recommendations`, {
+      const response = await fetch(`https://abgljmv-touristspotter-api.hf.space/api/recommendations`, {
         method: "POST",
         body: formData,
       });

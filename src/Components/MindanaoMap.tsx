@@ -5,7 +5,7 @@ import "leaflet/dist/leaflet.css";
 import "./MindanaoMap.css";
 
 const MindanaoMap: React.FC = () => {
-  const [geoJsonData, setGeoJsonData] = useState(null);
+  const [geoJsonData, setGeoJsonData] = useState<any>(null);
 
   useEffect(() => {
     fetch("./gadm41_PHL_1.json")
@@ -17,33 +17,27 @@ const MindanaoMap: React.FC = () => {
   }, []);
 
   const mindanaoRegions = [
-    // ZAMBOANGA PENINSULA (Region IX)
     "ZamboangadelNorte",
     "ZamboangadelSur",
     "ZamboangaSibugay",
-    // NORTHERN MINDANAO (Region X)
     "Bukidnon",
     "Camiguin",
     "LanaodelNorte",
     "MisamisOccidental",
     "MisamisOriental",
-    // DAVAO REGION (Region XI)
     "DavaodelNorte",
     "DavaodelSur",
     "DavaoOriental",
     "CompostelaValley",
-    // SOCCSKSARGEN (Region XII)
     "NorthCotabato",
     "SouthCotabato",
     "SultanKudarat",
     "Sarangani",
-    // CARAGA (Region XIII)
     "AgusandelNorte",
     "AgusandelSur",
     "SurigaodelNorte",
     "SurigaodelSur",
     "DinagatIslands",
-    // BARMM
     "LanaodelSur",
     "Maguindanao",
     "Basilan",
@@ -56,12 +50,14 @@ const MindanaoMap: React.FC = () => {
 
     const isMindanao = mindanaoRegions.includes(regionName);
 
-    layer.setStyle({
-      color: isMindanao ? "#FF0000" : "#808080",
-      weight: isMindanao ? 2 : 1,
-      fillColor: isMindanao ? "transparent" : "#808080",
-      fillOpacity: isMindanao ? 0 : 0.6,
-    });
+    if ("setStyle" in layer) {
+      (layer as L.Path).setStyle({
+        color: isMindanao ? "#FF0000" : "#808080",
+        weight: isMindanao ? 2 : 1,
+        fillColor: isMindanao ? "transparent" : "#808080",
+        fillOpacity: isMindanao ? 0 : 0.6,
+      });
+    }
   };
 
   return (
