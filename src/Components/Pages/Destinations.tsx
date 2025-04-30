@@ -13,7 +13,7 @@ interface Spot {
 }
 
 interface Hotel {
-  "Hotel Name": string;
+  hotel_name: string;
   city: string;
   URL: string;
 }
@@ -136,7 +136,7 @@ const DestinationsPage = () => {
               {filteredHotels.map((hotel, idx) => (
                 <li key={idx}>
                   <a href={hotel.URL} target="_blank" rel="noopener noreferrer">
-                    {hotel["Hotel Name"]}
+                    {hotel.hotel_name}
                   </a>{" "}
                   – {hotel.city}
                 </li>
